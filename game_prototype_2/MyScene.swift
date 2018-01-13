@@ -20,9 +20,7 @@ class MyScene: SKScene {
     
     override func didMove(to view: SKView) {
         gameLabel = scene?.childNode(withName: "gameLabel") as! SKLabelNode
-        if let color = bgColor {
-            self.backgroundColor = color
-        }
+
         //bird
         bird = self.childNode(withName: "bird") as? SKSpriteNode
         bird?.physicsBody = SKPhysicsBody(circleOfRadius: bird!.size.width/2)
@@ -39,10 +37,6 @@ class MyScene: SKScene {
         floor?.physicsBody?.affectedByGravity = false
         floor?.physicsBody?.isDynamic = false
 
-        
-//        let moveAction = SKAction.moveBy(x: 0, y: -1, duration: 0.008)
-//        let repeatAction = SKAction.repeatForever(moveAction)
-//        bird?.run(repeatAction)
     }
     
     
